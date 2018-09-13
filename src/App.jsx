@@ -7,7 +7,7 @@ export default class App extends Component {
     return (
       <div>
         <img src={logo} alt="logo" className='logo'/>
-        <h2 className='title'> App 组件</h2>
+        <h2 className='title'> App 组件  难受</h2>
       </div>
     )
   }
