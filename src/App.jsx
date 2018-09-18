@@ -1,14 +1,33 @@
-import React, {Component} from 'react'
-import logo from './logo.svg'
-import './App.css'
+/*
+* 应用根组件
+* */
+import React, {Component} from 'react';
+import Search from './components/search'
+import Main from './components/main'
+
 
 export default class App extends Component {
+
+  state = {
+    searchName:''
+  }
+
+  setSearchName = (searchName) => {
+    //更新状态
+    this.setState({
+      searchName
+    })
+  }
+
   render () {
+    const {searchName} = this.state
     return (
-      <div>
-        <img src={logo} alt="logo" className='logo'/>
-        <h2 className='title'> App 组件难受</h2>
+      <div className="container">
+        <Search setSearchName={this.setSearchName}/>
+        <Main searchName={searchName}/>
       </div>
     )
   }
 }
+
+
